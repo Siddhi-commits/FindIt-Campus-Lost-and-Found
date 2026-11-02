@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: findit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: findit
+  template:
+    metadata:
+      labels:
+        app: findit
+    spec:
+      containers:
+        - name: findit
+          image: findit:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
