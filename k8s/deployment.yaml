@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: findit
+  annotations:
+    gitops-demo: "automatic-sync-test"
 spec:
   replicas: 1
   selector:
